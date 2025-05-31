@@ -1,0 +1,177 @@
+<html class="scroll-smooth" lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Eco Adventure
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Russo+One&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Russo One', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Orbitron', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-[#15232D] text-white">
+  <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 py-3 bg-[#15232D] sticky top-0 z-50">
+   <div class="flex items-center">
+    <img alt="Eco Adventure Logo" class="w-[150px] h-10 object-contain" height="40" src="https://via.placeholder.com/150x40/228B22/FFFFFF?text=EcoAdventure" width="150"/>
+   </div>
+   <nav class="hidden md:flex space-x-8 font-semibold text-white text-sm">
+    <a class="hover:opacity-80" href="#about-section">About</a>
+    <a class="hover:opacity-80" href="#game-section">Game</a>
+    <a class="hover:opacity-80" href="#feedback-section">Feedback</a>
+   </nav>
+   <div class="flex items-center space-x-4">
+    <a href="#game-section" class="text-[#fff] font-semibold text-sm px-4 py-2 rounded bg-[#F58220] hover:bg-[#d46f1a]">Play Now!</a>
+   </div>
+  </header>
+  <main>
+   <section class="relative w-full max-h-[600px] md:max-h-[700px] lg:max-h-[800px] xl:max-h-[900px] overflow-hidden">
+        <img alt="Vibrant ecosystem in Eco Adventure game" class="w-full h-full object-cover object-center brightness-75" height="900" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" width="1920"/>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent">
+    </div>
+    <div class="absolute inset-y-0 left-6 sm:left-10 md:left-14 lg:left-20 xl:left-28 flex flex-col justify-center max-w-xl text-white z-10">
+     <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-3">
+          ECO ADVENTURE
+     </h1>
+         <p class="text-base sm:text-lg md:text-xl font-semibold leading-snug max-w-md mb-8">Embark on a journey to save the planet! Explore vibrant ecosystems, solve environmental puzzles, and build a sustainable future in Eco Adventure.</p>
+     <div class="flex space-x-6">
+      <button class="bg-[#F58220] hover:bg-[#d46f1a] text-white font-semibold text-lg px-8 py-3 rounded transform -skew-x-12">
+       <span class="block transform skew-x-12">
+            Learn More
+       </span>
+      </button>
+      <button class="bg-[#5B6FE6] hover:bg-[#4a5ad1] text-white font-semibold text-lg px-8 py-3 rounded transform -skew-x-12">
+       <span class="block transform skew-x-12">
+            Watch Trailer
+       </span>
+      </button>
+     </div>
+    </div>
+   </section>
+       <section id="about-section" class="py-16 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 bg-slate-800">
+         <div class="max-w-4xl mx-auto">
+           <h2 class="text-3xl font-bold text-center mb-8">About Eco Adventure</h2>
+           <p class="text-lg text-gray-300 mb-4">
+             Welcome to Eco Adventure, an exciting game designed to raise awareness about sustainability and environmental conservation! Learn about making eco-friendly choices while having fun.
+           </p>
+           <p class="text-lg text-gray-300">
+             In Eco Adventure, you'll embark on quests, solve puzzles, and make decisions that impact your virtual environment. Discover the importance of recycling, renewable energy, and protecting biodiversity. Are you ready to become an eco-hero?
+           </p>
+         </div>
+       </section>
+       <section id="game-section" class="py-16 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 bg-slate-700">
+         <div class="max-w-4xl mx-auto text-center">
+           <h2 class="text-3xl font-bold mb-8">Play Eco Adventure</h2>
+           <p class="text-lg text-gray-300 mb-6">
+             The Eco Adventure game will be available here soon! Get ready to test your sustainability knowledge and skills.
+           </p>
+           <div id="game-container" class="w-full max-w-2xl h-96 bg-gray-600 mx-auto border border-gray-500 rounded-lg flex items-center justify-center">
+             <em class="text-gray-400">Your Eco Adventure begins soon! Interactive game content will load here.</em>
+           </div>
+         </div>
+       </section>
+       <section id="feedback-section" class="py-16 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 bg-slate-800">
+         <div class="max-w-2xl mx-auto">
+           <h2 class="text-3xl font-bold text-center mb-8">Submit Your Feedback</h2>
+           <form id="feedback-form" class="mt-6 space-y-6">
+             <div>
+               <label for="email" class="block text-sm font-medium text-gray-300">Your Gmail</label>
+               <div class="mt-1">
+                 <input type="email" name="email" id="email" required
+                        class="block w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm text-white"
+                        placeholder="your.email@gmail.com">
+               </div>
+             </div>
+
+             <div>
+               <label for="message" class="block text-sm font-medium text-gray-300">Feedback</label>
+               <div class="mt-1">
+                 <textarea id="message" name="message" rows="4" required
+                           class="block w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm text-white"
+                           placeholder="Enter your feedback here..."></textarea>
+               </div>
+             </div>
+
+             <div>
+               <button type="submit"
+                       class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-green-500">
+                 Send Feedback
+               </button>
+             </div>
+           </form>
+           <div id="feedback-status" class="mt-4 text-center">
+             <!-- Status messages will appear here -->
+           </div>
+         </div>
+   </section>
+  </main>
+     <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Smooth scrolling for navigation links
+  const navLinks = document.querySelectorAll('header nav a[href^="#"], header a[href^="#game-section"]'); // Selects nav links and the "Play Now!" button
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Feedback form handling
+  const feedbackForm = document.getElementById('feedback-form');
+  const feedbackStatus = document.getElementById('feedback-status');
+
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
+
+      // Basic validation
+      if (email === '' || message === '') {
+        feedbackStatus.innerHTML = `<p class="text-red-400">Please fill out all fields.</p>`;
+        return;
+      }
+
+      // Gmail specific validation (simple check)
+      if (!email.endsWith('@gmail.com')) {
+          feedbackStatus.innerHTML = `<p class="text-red-400">Please enter a valid Gmail address (e.g., user@gmail.com).</p>`;
+          return;
+      }
+
+      // Process feedback (simulation)
+      console.log('Feedback Submitted:', { email, message });
+
+      feedbackStatus.innerHTML = `<p class="text-green-400">Thank you for your feedback!</p>`;
+      emailInput.value = '';
+      messageInput.value = '';
+
+      // Optional: Clear status message after a few seconds
+      setTimeout(() => {
+        feedbackStatus.innerHTML = '';
+      }, 5000);
+    });
+  }
+});
+</script>
+ </body>
+</html>
