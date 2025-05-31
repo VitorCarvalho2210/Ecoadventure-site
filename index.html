@@ -5,6 +5,7 @@
   <title>
    Eco Adventure
   </title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -115,6 +116,8 @@
   </main>
      <script>
 document.addEventListener('DOMContentLoaded', () => {
+  emailjs.init('bibB8DAatjPAujiKJ'); // EmailJS Public Key
+
   // Smooth scrolling for navigation links
   const navLinks = document.querySelectorAll('header nav a[href^="#"], header a[href^="#game-section"]'); // Selects nav links and the "Play Now!" button
 
@@ -149,26 +152,40 @@ document.addEventListener('DOMContentLoaded', () => {
       // Basic validation
       if (email === '' || message === '') {
         feedbackStatus.innerHTML = `<p class="text-red-400">Please fill out all fields.</p>`;
+        setTimeout(() => { feedbackStatus.innerHTML = ''; }, 5000);
         return;
       }
 
-      // Gmail specific validation (simple check)
-      if (!email.endsWith('@gmail.com')) {
-          feedbackStatus.innerHTML = `<p class="text-red-400">Please enter a valid Gmail address (e.g., user@gmail.com).</p>`;
-          return;
-      }
+      // Disable button to prevent multiple submissions
+      const submitButton = feedbackForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.innerHTML;
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Sending...'; // Optional: indicate processing
 
-      // Process feedback (simulation)
-      console.log('Feedback Submitted:', { email, message });
+      const templateParams = {
+        email: email,
+        message: message
+      };
 
-      feedbackStatus.innerHTML = `<p class="text-green-400">Thank you for your feedback!</p>`;
-      emailInput.value = '';
-      messageInput.value = '';
-
-      // Optional: Clear status message after a few seconds
-      setTimeout(() => {
-        feedbackStatus.innerHTML = '';
-      }, 5000);
+      emailjs.send('service_08mrame', 'template_u2lq5yw', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          feedbackStatus.innerHTML = `<p class="text-green-400">Thank you for your feedback! It has been sent.</p>`;
+          emailInput.value = '';
+          messageInput.value = '';
+        }, function(error) {
+          console.log('FAILED...', error);
+          let errorMessage = 'Failed to send feedback. Please try again later.';
+          if (error.status === 400) {
+            errorMessage = 'There was an issue with your submission. Please check your input and try again.';
+          }
+          feedbackStatus.innerHTML = `<p class="text-red-400">${errorMessage}</p>`;
+        })
+        .finally(function() {
+            submitButton.disabled = false; // Re-enable button
+            submitButton.innerHTML = originalButtonText; // Restore button text
+            setTimeout(() => { feedbackStatus.innerHTML = ''; }, 5000); // Clear status after 5s
+        });
     });
   }
 });
